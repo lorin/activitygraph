@@ -1,0 +1,38 @@
+#summary Tools and research which are related.
+
+= Related Work =
+
+== Papers == 
+
+ *  P. M. Johnson and H. Kou, [http://csdl.ics.hawaii.edu/techreports/06-02/06-02.pdf Automated Recognition of Test-Driven Development with Zorro], in International Workshop on Software Process Shanghai, China: University of Hawai'i, 2006.
+ * F. E. Ritter and J. H. Larkin, "Developing Process Models as Summaries of HCI Action Sequences," Human-Computer Interaction, vol. 9, pp. 345-383, 1994.
+
+
+
+== Tools ==
+
+Software-engineering in-process capture and analysis tools
+
+ * [http://www.hackystat.org Hackystat] ([http://code.google.com/p/hackystat/ new version])
+ * [http://6thsenseanalytics.com 6thSenseAnalytics]
+ * [http://developer.berlios.de/projects/ec/ ElectroCodeoGram] ([http://openfacts.berlios.de/index-en.phtml?title=ElectroCodeoGram wiki])
+ * [http://www.prom.case.unibz.it/ PRO Metrics]
+ * [http://empirical.jp/~epm/ Empirical Project Monitor]
+ * [http://serl.cs.colorado.edu/serl/process/Balboa Balboa]
+ 
+Some tools that capture information about users as they work.
+
+ * [http://www.rescuetime.com/ RescueTime]
+ * [http://www.slifelabs.com SLife]
+ * [http://timesnapper.com/ TimeSnapper]
+ * [http://www.mamooba.com/tracktime TrackTime]
+
+Some tools that visualize time-series data:
+
+ * [http://www.cs.umd.edu/hcil/patternfinder/ PatternFinder]
+ * [http://simile.mit.edu/timeline/ Timeline]
+ * [http://timepedia.org Chronoscope]
+
+Tools for doing exploratory sequential data analysis (ESDA):
+ * [http://ritter.ist.psu.edu/dismal/dismal.html Dismal]
+ * [http://acs.ist.psu.edu/dismal/MacShapa.html MacShapa]
