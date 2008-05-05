@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<project name="ActivityGraph" default="zip" basedir=".">
+  
+  <property name="name"    value="ActivityGraph" />
+  <property name="version" value="x_y" />
+  <property name="release" value="${name}-${version}" />
+
+  <property name="build.prod.dir" location="build/prod"/>
+  <property name="dist.dir"       location="dist" />
+
+  <property name="jar.name" value="${name}.jar" />
+  <property name="jar.path" location="${dist.dir}/${jar.name}" />
+  
+  <property name="main-class" value="edu.unl.cse.activitygraph.GuiMain"/>
+
+  <property name="zip.name" value="${release}.zip" />
+  <property name="zip.path" location="${dist.dir}/${zip.name}" />
+
+  <target name="jar">
+    <mkdir dir="${dist.dir}"/>
+    <jar destfile="${jar.path}" basedir="${build.prod.dir}">
+      <manifest>
+        <attribute name="Main-Class" value="${main-class}"/>
+        <!-- The classpath probably shouldn't be hardcoded like this, but I don't 
+             know the proper way to do this - Lorin -->
+		    <attribute name="Class-Path" value="lib/piccolo.jar lib/piccolox.jar lib/xom-1.1.jar lib/svnkit.jar lib/ganymed.jar lib/postgresql-8.2-506.jdbc3.jar lib/swing-layout-1.0.2.jar lib/swing-worker-1.1.jar" />
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="zip" depends="jar">
+    
+    <zip destfile="${zip.path}">
+      <zipfileset dir="${basedir}" prefix="${release}">
+        <include name="readme.txt" /> 
+        <include name="license.txt" /> 
+      </zipfileset> 
+      <!--  We don't need this
+      <zipfileset dir="bin" filemode="755" prefix="${release}/bin"> 
+        <include name="index.*" /> 
+        <include name="indexAll.*" /> 
+        <include name="search.*" /> 
+      </zipfileset> 
+       -->
+      <zipfileset dir="data"  prefix="${release}/data" />  
+      <zipfileset dir="dist" includes="${jar.name}" 
+                             prefix="${release}" /> 
+      <zipfileset dir="lib" prefix="${release}/lib"> 
+        <include name="**/ganymed.jar" /> 
+        <include name="**/piccolo.jar" /> 
+        <include name="**/piccolox.jar" /> 
+        <include name="**/postgresql-8.2-506.jdbc3.jar" /> 
+        <include name="**/svnkit.jar" /> 
+        <include name="**/swing-layout-1.0.2.jar" /> 
+		<include name="**/swing-worker-1.1.jar" />
+        <include name="**/xom-1.1.jar" /> 
+      </zipfileset> 
+    </zip>
+    
+  </target>
+
+</project>

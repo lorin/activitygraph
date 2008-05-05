@@ -1,0 +1,593 @@
+<?xml version="1.0" ?>
+<ActivityGraph>
+	<SeriesGroup name="Activity">
+		<Series name="Serialcoding">
+			<Interval end="1095259550" start="1095257936" note="activity serial coding1" />
+      		<Interval end="1095260104" start="1095259591" />
+     		 	<Interval end="1095260255" start="1095260116" />
+			<Interval end="1095260688" start="1095260356" />
+			<Interval end="1095261137" start="1095261010" />
+    		</Series>
+    	<Series name="Parallelcoding">
+      	<Interval end="1095261654" start="1095261160" note="activity parallel coding 1" />
+      	<Interval end="1095261875" start="1095261672" note="" />
+    	</Series>
+    	<Series name="Performancetesting">
+      	<Interval end="1095261160" start="1095261137" note="activity performance testing1" />
+		<Interval end="1095265175" start="1095264048" note="" />
+		<Interval end="1095265981" start="1095265631" note="" />
+    	</Series>
+    	<Series name="Debugging/Testing">
+      	<Interval end="1095259591" start="1095259550" note="activity debugging/testing1"/>
+      	<Interval end="1095260116" start="1095260104" />
+      	<Interval end="1095261010" start="1095260716" />
+      	<Interval end="1095261137" start="1095261137" />
+      	<Interval end="1095263150" start="1095261875" />
+      	<Interval end="1095264048" start="1095263165" />
+      	<Interval end="1095265631" start="1095265175" />
+    	</Series>
+    	<Series name="Fixcompileerror">
+      	<Interval end="1095260356" start="1095260255" note="activity fix compile error1"/>
+		<Interval end="1095260716" start="1095260688" />
+		<Interval end="1095261672" start="1095261654" />
+		<Interval end="1095263165" start="1095263150" />
+    	</Series>
+  	</SeriesGroup>
+	<SeriesGroup name="Event">
+		<Series name="compile"/>
+		<Series name="viewing"/>
+		<Series name="filecommand">
+			<Point  time="1095259245" text="pwd  "/>
+			<Point  time="1095259246" text="ls  "/>
+			<Point  time="1095259252" text="ls  "/>
+			<Point  time="1095259254" text="ls  "/>
+			<Point  time="1095259528" text="ls  "/>
+			<Point  time="1095259570" text="ls  "/>
+			<Point  time="1095259837" text="ls  "/>
+			<Point  time="1095259876" text="pwd  "/>
+			<Point  time="1095259876" text="ls  "/>
+			<Point  time="1095260091" text="pwd  "/>
+			<Point  time="1095260092" text="ls  "/>
+			<Point  time="1095260111" text="ls  "/>
+			<Point  time="1095260724" text="ls  "/>
+			<Point  time="1095261285" text="ls  "/>
+			<Point  time="1095261291" text="rm  core.205*"/>
+			<Point  time="1095261293" text="ls  "/>
+			<Point  time="1095261311" text="ls  "/>
+			<Point  time="1095261324" text="cp  &quot;serial.c parallel.c&quot;"/>
+			<Point  time="1095261681" text="ls  "/>
+			<Point  time="1095261715" text="pwd  "/>
+			<Point  time="1095262096" text="ls  "/>
+			<Point  time="1095262332" text="ls  "/>
+			<Point  time="1095262391" text="ls  "/>
+			<Point  time="1095262498" text="ls  "/>
+			<Point  time="1095263225" text="ls  "/>
+			<Point  time="1095263537" text="ls  "/>
+			<Point  time="1095263566" text="ls  "/>
+			<Point  time="1095263805" text="ls  "/>
+			<Point  time="1095264088" text="ls  "/>
+			<Point  time="1095264383" text="ls  "/>
+			<Point  time="1095264523" text="ls  "/>
+			<Point  time="1095264611" text="ls  "/>
+			<Point  time="1095264671" text="ls  "/>
+			<Point  time="1095264689" text="ls  "/>
+			<Point  time="1095264699" text="ls  "/>
+			<Point  time="1095264776" text="ls  "/>
+			<Point  time="1095264869" text="ls  "/>
+			<Point  time="1095264878" text="ls  "/>
+			<Point  time="1095264920" text="ls  "/>
+			<Point  time="1095264932" text="ls  "/>
+			<Point  time="1095264991" text="ls  "/>
+			<Point  time="1095265130" text="ls  "/>
+			<Point  time="1095265577" text="ls  "/>
+			<Point  time="1095265603" text="ls  "/>
+			<Point  time="1095265761" text="ls  "/>
+			<Point  time="1095265880" text="ls  "/>
+		</Series>
+		<Series name="editing">
+			<Point  time="1095257936" text="editing  emacs"/>
+			<Point  time="1095257942" text="editing  "/>
+			<Point  time="1095259261" text="&quot;Open File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259319" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259379" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259394" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259409" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259418" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259439" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259469" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259474" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259496" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259497" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259499" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259518" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259529" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259584" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259589" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259600" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259649" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259679" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259692" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259709" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259728" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259739" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259753" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259755" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259769" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259782" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259799" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095259979" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260006" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260009" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260039" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260051" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260055" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260069" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260080" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260099" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260189" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260219" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260236" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260249" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260279" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260303" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260309" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260353" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260369" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260379" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260399" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260429" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260459" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260472" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260489" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260519" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260543" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260549" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260579" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260609" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260635" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260639" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260647" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260657" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260664" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260669" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260709" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260729" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260759" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260762" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260783" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260789" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260896" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260909" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260951" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260969" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260972" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095260999" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261030" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261033" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261059" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261089" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261091" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261117" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261119" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261119" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261126" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261131" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261149" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095261329" text="&quot;Open File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261359" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261365" text="&quot;Open File&quot;  /roguehomes/userc/tmp/teset.c"/>
+			<Point  time="1095261369" text="&quot;Open File&quot;  /roguehomes/userc/tmp/test.c"/>
+			<Point  time="1095261385" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261411" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261419" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261426" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261449" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261460" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261466" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261472" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261479" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261502" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261506" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261508" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261509" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261513" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261537" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261539" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261541" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261552" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261563" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261569" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261613" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261629" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261668" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261700" text="&quot;Open File&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095261704" text="&quot;Open File&quot;  /roguehomes/userc/tmp/test.sh"/>
+			<Point  time="1095261708" text="&quot;Open File&quot;  /roguehomes/userc/tmp/test2.sh"/>
+			<Point  time="1095261740" text="&quot;Save File&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095261749" text="&quot;State Change&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095261865" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261871" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095261899" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262128" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262139" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262199" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262213" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262229" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262422" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262444" text="&quot;Save File&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095262518" text="&quot;Save File&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095262525" text="&quot;State Change&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095262549" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262559" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262642" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262648" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262649" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262664" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262679" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262682" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262689" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262709" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262713" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262730" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262731" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262739" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262769" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262778" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262799" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262829" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262839" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262857" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262859" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262867" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262879" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262881" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262889" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262895" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262899" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262905" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262910" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262919" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262920" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095262949" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263043" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263069" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263072" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263093" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263099" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263101" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263113" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263122" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263129" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263131" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263159" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263161" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263183" text="&quot;Open File&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095263185" text="&quot;Save File&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095263189" text="&quot;State Change&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095263300" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263364" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263369" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263421" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263429" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263669" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263669" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263671" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263699" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263704" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263729" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263744" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263753" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263759" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263857" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263866" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263869" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263873" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263879" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263906" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263909" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263909" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263919" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263921" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263939" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263956" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263959" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263960" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263966" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263969" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263970" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263980" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263989" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263996" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095263999" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095264001" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095264014" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095264026" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095264029" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095264191" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095264193" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095264209" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095264221" text="&quot;Save File&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095264239" text="&quot;State Change&quot;  /roguehomes/userc/task/parallel.c"/>
+			<Point  time="1095264643" text="&quot;Save File&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095264869" text="&quot;State Change&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095264930" text="&quot;Save File&quot;  /roguehomes/userc/task/buffon.sh"/>
+			<Point  time="1095265392" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095265409" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095265420" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095265439" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095265450" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095265469" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095265567" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095265574" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095265575" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095265589" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095265626" text="&quot;Save File&quot;  /roguehomes/userc/task/serial.c"/>
+			<Point  time="1095265649" text="&quot;State Change&quot;  /roguehomes/userc/task/serial.c"/>
+		</Series>
+		<Series name="building">
+			<Point  time="1095259550" text="cc  &quot;o buffon serial.c&quot;"/>
+			<Point  time="1095260104" text="cc  &quot;serial.c -o buffon&quot;"/>
+			<Point  time="1095260254" text="cc  &quot;serial.c -o buffon&quot;"/>
+			<Point  time="1095260342" text="cc  &quot;serial.c -o buffon&quot;"/>
+			<Point  time="1095260356" text="cc  &quot;serial.c -o buffon&quot;"/>
+			<Point  time="1095260688" text="cc  &quot;serial.c -o buffon&quot;"/>
+			<Point  time="1095260711" text="cc  &quot;serial.c -o buffon&quot;"/>
+			<Point  time="1095260715" text="cc  &quot;serial.c -o buffon -lm&quot;"/>
+			<Point  time="1095260785" text="cc  &quot;serial.c -o buffon -lm&quot;"/>
+			<Point  time="1095260905" text="cc  &quot;serial.c -o buffon -lm&quot;"/>
+			<Point  time="1095260974" text="cc  &quot;serial.c -o buffon -lm&quot;"/>
+			<Point  time="1095261136" text="cc  &quot;serial.c -o buffon -lm&quot;"/>
+			<Point  time="1095265594" text="cc  &quot;o buffon_serial serial.c&quot;"/>
+			<Point  time="1095265596" text="cc  &quot;o buffon_serial serial.c -lm&quot;"/>
+			<Point  time="1095265631" text="cc  &quot;o buffon_serial serial.c -lm&quot;"/>
+			<Point  time="1095265916" text="cc  &quot;O2 -o buffon_serial serial.c -lm&quot;"/>
+		</Series>
+		<Series name="unkonwn"/>
+		<Series name="other">
+			<Point  time="1095259870" text="xterm  &amp;"/>
+			<Point  time="1095261160" text="time  &quot;./buffon 1 2 2 1000000&quot;"/>
+			<Point  time="1095265981" text="time  &quot;./buffon_serial 1 2 2 10000000&quot;"/>
+		</Series>
+		<Series name="running">
+			<Point  time="1095259251" text="mkdir  task"/>
+			<Point  time="1095259254" text="cd  task/"/>
+			<Point  time="1095259550" text="  "/>
+			<Point  time="1095259572" text="./buffon  "/>
+			<Point  time="1095259591" text="./buffon  &quot;1 2 3 4&quot;"/>
+			<Point  time="1095259832" text="less  /usr/include/math.h"/>
+			<Point  time="1095259847" text="grep  &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;rand&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; /usr/include/*.h&quot;&quot;&quot;&quot;&quot;&quot;&quot;"/>
+			<Point  time="1095259854" text="grep  &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;rand&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; /usr/include/*.h | less&quot;&quot;&quot;&quot;&quot;&quot;&quot;"/>
+			<Point  time="1095259885" text="grep  &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;rand&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; /usr/include/*.h&quot;&quot;&quot;&quot;&quot;&quot;&quot;"/>
+			<Point  time="1095259890" text="grep  &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;rand&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; /usr/include/*.h | less&quot;&quot;&quot;&quot;&quot;&quot;&quot;"/>
+			<Point  time="1095259950" text="man  rand"/>
+			<Point  time="1095260104" text="  "/>
+			<Point  time="1095260112" text="./buffon  "/>
+			<Point  time="1095260116" text="./buffon  &quot;1 2 3 4&quot;"/>
+			<Point  time="1095260255" text="  "/>
+			<Point  time="1095260274" text="grep  &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;PI&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; /usr/include/*&quot;&quot;&quot;&quot;&quot;&quot;&quot;"/>
+			<Point  time="1095260280" text="grep  &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;PI &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; /usr/include/*&quot;&quot;&quot;&quot;&quot;&quot;&quot;"/>
+			<Point  time="1095260286" text="grep  &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; PI &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; /usr/include/*&quot;&quot;&quot;&quot;&quot;&quot;&quot;"/>
+			<Point  time="1095260342" text="  "/>
+			<Point  time="1095260356" text="  "/>
+			<Point  time="1095260688" text="  "/>
+			<Point  time="1095260711" text="  "/>
+			<Point  time="1095260716" text="  "/>
+			<Point  time="1095260733" text="./buffon  &quot;1 2 2 1000000&quot;"/>
+			<Point  time="1095260786" text="  "/>
+			<Point  time="1095260790" text="./buffon  &quot;1 2 2 1000000&quot;"/>
+			<Point  time="1095260906" text="  "/>
+			<Point  time="1095260910" text="./buffon  &quot;1 2 2 1000000&quot;"/>
+			<Point  time="1095260974" text="  "/>
+			<Point  time="1095260977" text="./buffon  &quot;1 2 2 1000000&quot;"/>
+			<Point  time="1095260997" text="./buffon  &quot;1 2 3 1000000&quot;"/>
+			<Point  time="1095261004" text="./buffon  &quot;1 2 3 1000000&quot;"/>
+			<Point  time="1095261010" text="./buffon  &quot;1 2 2 1000000&quot;"/>
+			<Point  time="1095261137" text="  "/>
+			<Point  time="1095261148" text="./buffon  &quot;1 2 2 1000000&quot;"/>
+			<Point  time="1095261310" text="mv  &quot;buffon buffon_serial&quot;"/>
+			<Point  time="1095261373" text="/roguehomes/userc/tmp/teset.c  "/>
+			<Point  time="1095261654" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095261654" text="  "/>
+			<Point  time="1095261671" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095261672" text="  "/>
+			<Point  time="1095261844" text="/roguehomes/userc/tmp/test2.sh  "/>
+			<Point  time="1095261874" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095261875" text="  "/>
+			<Point  time="1095261893" text="qsub  &quot;-l 4:red:gigabit&quot;"/>
+			<Point  time="1095261906" text="qsub  &quot;-l 4:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095261914" text="qsub  &quot;-l 4:blue:gigabit buffon.sh&quot;"/>
+			<Point  time="1095261928" text="qsub  &quot;-l 4:blue buffon.sh&quot;"/>
+			<Point  time="1095261938" text="qsub  &quot;-l 4:red buffon.sh&quot;"/>
+			<Point  time="1095261962" text="qsub  &quot;-l nodes=4:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095261966" text="qstat  "/>
+			<Point  time="1095261975" text="qstat  "/>
+			<Point  time="1095261988" text="qstat  "/>
+			<Point  time="1095261989" text="qstat  "/>
+			<Point  time="1095261996" text="qstat  "/>
+			<Point  time="1095261999" text="qstat  "/>
+			<Point  time="1095262004" text="qstat  "/>
+			<Point  time="1095262007" text="qstat  "/>
+			<Point  time="1095262009" text="qstat  "/>
+			<Point  time="1095262016" text="qstat  "/>
+			<Point  time="1095262023" text="qstat  "/>
+			<Point  time="1095262030" text="qstat  "/>
+			<Point  time="1095262035" text="qstat  "/>
+			<Point  time="1095262053" text="qstat  "/>
+			<Point  time="1095262055" text="qstat  "/>
+			<Point  time="1095262071" text="qstat  "/>
+			<Point  time="1095262079" text="qstat  "/>
+			<Point  time="1095262082" text="qstat  "/>
+			<Point  time="1095262099" text="cat  buffon.sh"/>
+			<Point  time="1095262110" text="qstat  "/>
+			<Point  time="1095262149" text="qstat  "/>
+			<Point  time="1095262167" text="qstat  "/>
+			<Point  time="1095262178" text="qhold  25962"/>
+			<Point  time="1095262180" text="qstat  "/>
+			<Point  time="1095262216" text="qstat  "/>
+			<Point  time="1095262227" text="qdel  25962"/>
+			<Point  time="1095262229" text="qstat  "/>
+			<Point  time="1095262245" text="qstat  "/>
+			<Point  time="1095262268" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095262269" text="  "/>
+			<Point  time="1095262307" text="qsub  &quot;-l nodes=4:blue:gigabit buffon.sh&quot;"/>
+			<Point  time="1095262311" text="qsub  f"/>
+			<Point  time="1095262314" text="qstat  f"/>
+			<Point  time="1095262329" text="qstat  "/>
+			<Point  time="1095262340" text="cat  buffon.sh"/>
+			<Point  time="1095262343" text="cat  buffon.sh.o25962"/>
+			<Point  time="1095262382" text="qsat  "/>
+			<Point  time="1095262385" text="uptime  "/>
+			<Point  time="1095262389" text="qstat  "/>
+			<Point  time="1095262396" text="cat  buffon.sh.o25963"/>
+			<Point  time="1095262429" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095262431" text="  "/>
+			<Point  time="1095262452" text="qsub  &quot;-l nodes=4:blue:gigabit buffon.sh&quot;"/>
+			<Point  time="1095262455" text="qstat  "/>
+			<Point  time="1095262472" text="qstat  "/>
+			<Point  time="1095262481" text="qstat  "/>
+			<Point  time="1095262496" text="qstat  "/>
+			<Point  time="1095262507" text="cat  buffon.sh.o25964"/>
+			<Point  time="1095262525" text="/roguehomes/userc/task/buffon.sh  "/>
+			<Point  time="1095263149" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095263150" text="  "/>
+			<Point  time="1095263164" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095263165" text="  "/>
+			<Point  time="1095263191" text="qsub  &quot;-l nodes=4:blue:gigabit buffon.sh&quot;"/>
+			<Point  time="1095263221" text="qstat  "/>
+			<Point  time="1095263224" text="qstat  "/>
+			<Point  time="1095263246" text="cat  buffon.sh.o25957"/>
+			<Point  time="1095263255" text="cat  buffon.sh.o25965"/>
+			<Point  time="1095263394" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095263395" text="  "/>
+			<Point  time="1095263402" text="qsub  &quot;-l nodes=4:blue:gigabit buffon.sh&quot;"/>
+			<Point  time="1095263425" text="qstat  "/>
+			<Point  time="1095263431" text="qstat  "/>
+			<Point  time="1095263432" text="qstat  "/>
+			<Point  time="1095263434" text="qstat  "/>
+			<Point  time="1095263438" text="qstat  "/>
+			<Point  time="1095263440" text="qstat  "/>
+			<Point  time="1095263443" text="qstat  "/>
+			<Point  time="1095263445" text="qstat  "/>
+			<Point  time="1095263448" text="qstat  "/>
+			<Point  time="1095263454" text="qstat  "/>
+			<Point  time="1095263455" text="qstat  "/>
+			<Point  time="1095263456" text="qstat  "/>
+			<Point  time="1095263457" text="qstat  "/>
+			<Point  time="1095263459" text="qstat  "/>
+			<Point  time="1095263461" text="qstat  "/>
+			<Point  time="1095263462" text="qstat  "/>
+			<Point  time="1095263463" text="qstat  "/>
+			<Point  time="1095263465" text="qstat  "/>
+			<Point  time="1095263474" text="qstat  "/>
+			<Point  time="1095263477" text="qstat  "/>
+			<Point  time="1095263485" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095263485" text="  "/>
+			<Point  time="1095263491" text="qstat  "/>
+			<Point  time="1095263497" text="qhold  25966"/>
+			<Point  time="1095263498" text="qstat  "/>
+			<Point  time="1095263502" text="qdel  25966"/>
+			<Point  time="1095263504" text="qstat  "/>
+			<Point  time="1095263519" text="qstat  "/>
+			<Point  time="1095263528" text="qsub  &quot;-l nodes=4:blue:gigabit buffon.sh&quot;"/>
+			<Point  time="1095263533" text="qstat  "/>
+			<Point  time="1095263543" text="cat  buffon.sh.o25966"/>
+			<Point  time="1095263561" text="qstat  "/>
+			<Point  time="1095263563" text="qstat  "/>
+			<Point  time="1095263564" text="qstat  "/>
+			<Point  time="1095263571" text="cat  buffon.sh.o25967"/>
+			<Point  time="1095263764" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095263764" text="  "/>
+			<Point  time="1095263772" text="qsub  &quot;-l nodes=4:blue:gigabit buffon.sh&quot;"/>
+			<Point  time="1095263788" text="qstat  "/>
+			<Point  time="1095263790" text="qstat  "/>
+			<Point  time="1095263792" text="qstat  "/>
+			<Point  time="1095263794" text="qstat  "/>
+			<Point  time="1095263798" text="qstat  "/>
+			<Point  time="1095263802" text="qstat  "/>
+			<Point  time="1095263812" text="cat  buffon.sh.o25968"/>
+			<Point  time="1095264034" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095264034" text="  "/>
+			<Point  time="1095264048" text="qsub  &quot;-l nodes=4:blue:gigabit buffon.sh&quot;"/>
+			<Point  time="1095264063" text="qstat  "/>
+			<Point  time="1095264069" text="qstat  "/>
+			<Point  time="1095264073" text="qstat  "/>
+			<Point  time="1095264086" text="qstat  "/>
+			<Point  time="1095264097" text="cat  buffon.sh.o25969"/>
+			<Point  time="1095264288" text="mpicc  &quot;parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095264288" text="  "/>
+			<Point  time="1095264330" text="qsub  &quot;-l nodes=8:blue:gigabit buffon.sh&quot;"/>
+			<Point  time="1095264337" text="qsub  &quot;-l nodes=8:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095264349" text="qstat  "/>
+			<Point  time="1095264358" text="qstat  "/>
+			<Point  time="1095264362" text="qstat  "/>
+			<Point  time="1095264365" text="qstat  "/>
+			<Point  time="1095264382" text="qstat  "/>
+			<Point  time="1095264393" text="cat  buffon.sh.o25971"/>
+			<Point  time="1095264434" text="mpicc  &quot;o parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095264434" text="  "/>
+			<Point  time="1095264462" text="qsub  &quot;-l nodes=8:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095264474" text="qstat  "/>
+			<Point  time="1095264484" text="qstat  "/>
+			<Point  time="1095264486" text="qstat  "/>
+			<Point  time="1095264488" text="qstat  "/>
+			<Point  time="1095264490" text="qstat  "/>
+			<Point  time="1095264493" text="qstat  "/>
+			<Point  time="1095264493" text="qstat  "/>
+			<Point  time="1095264520" text="qstat  "/>
+			<Point  time="1095264534" text="cat  buffon.sh.o25972"/>
+			<Point  time="1095264551" text="mpicc  &quot;O2 parallel.c -o buffon -lm&quot;"/>
+			<Point  time="1095264563" text="qsub  &quot;-l nodes=8:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095264591" text="qstat  "/>
+			<Point  time="1095264598" text="qstat  "/>
+			<Point  time="1095264604" text="qstat  "/>
+			<Point  time="1095264609" text="qstat  "/>
+			<Point  time="1095264615" text="cat  buffon.sh.o25973"/>
+			<Point  time="1095264667" text="qsub  &quot;-l nodes=1:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095264674" text="mkdir  debuf"/>
+			<Point  time="1095264681" text="mv  &quot;buffon.sh.o* debuf/&quot;"/>
+			<Point  time="1095264689" text="mv  &quot;buffon.sh.e* debuf/&quot;"/>
+			<Point  time="1095264695" text="mv  &quot;debuf debug&quot;"/>
+			<Point  time="1095264698" text="qstat  "/>
+			<Point  time="1095264707" text="cat  buffon.sh.o25974"/>
+			<Point  time="1095264744" text="qsub  &quot;-l nodes=2:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095264770" text="qstat  "/>
+			<Point  time="1095264774" text="qstat  "/>
+			<Point  time="1095264780" text="cat  buffon.sh.o25975"/>
+			<Point  time="1095264807" text="qsub  &quot;-l nodes=4:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095264858" text="qstat  "/>
+			<Point  time="1095264875" text="mv  &quot;buffon.sh.o* debug/&quot;"/>
+			<Point  time="1095264878" text="mv  &quot;buffon.sh.e* debug/&quot;"/>
+			<Point  time="1095264884" text="qsub  &quot;-l nodes=1:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095264888" text="qstat  "/>
+			<Point  time="1095264918" text="qstat  "/>
+			<Point  time="1095264923" text="cat  buffon.sh.o25977"/>
+			<Point  time="1095264936" text="mv  &quot;buffon.sh.o25977 debug/&quot;"/>
+			<Point  time="1095264939" text="mv  &quot;buffon.sh.e25977 debug/&quot;"/>
+			<Point  time="1095264948" text="qsub  &quot;-l nodes=4:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095264950" text="qstat  "/>
+			<Point  time="1095264967" text="qstat  "/>
+			<Point  time="1095264974" text="qstat  "/>
+			<Point  time="1095264979" text="qstat  "/>
+			<Point  time="1095264989" text="qstat  "/>
+			<Point  time="1095264995" text="cat  buffon.sh.o25978"/>
+			<Point  time="1095265071" text="qsub  &quot;-l nodes=1:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095265114" text="qstat  "/>
+			<Point  time="1095265116" text="qstat  "/>
+			<Point  time="1095265129" text="qstat  "/>
+			<Point  time="1095265135" text="cat  buffon.sh.o25979"/>
+			<Point  time="1095265175" text="qsub  &quot;-l nodes=2:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095265594" text="  "/>
+			<Point  time="1095265596" text="  "/>
+			<Point  time="1095265616" text="./buffon_serial  &quot;1 2 2 100000&quot;"/>
+			<Point  time="1095265637" text="./buffon_serial  &quot;1 2 2 100000&quot;"/>
+			<Point  time="1095265759" text="qstat  "/>
+			<Point  time="1095265773" text="cat  buffon.sh.o25980"/>
+			<Point  time="1095265831" text="qsub  &quot;-l nodes=8:red:gigabit buffon.sh&quot;"/>
+			<Point  time="1095265879" text="qstat  "/>
+			<Point  time="1095265885" text="cat  buffon.sh.o25981"/>
+			<Point  time="1095265916" text="  "/>
+			<Point  time="1095265951" text="./buffon_serial  &quot;1 2 2 10000000&quot;"/>
+			<Point  time="1095266049" text="  "/>
+		</Series>
+	</SeriesGroup>
+</ActivityGraph>

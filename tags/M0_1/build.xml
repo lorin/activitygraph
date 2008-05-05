@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<project name="ActivityGraph" default="compile" basedir=".">
+  <property name="src.dir" value="src/edu/unl/cse/activitygraph"/>
+  <property name="build.dir" value="build"/>
+  <property name="lib.dir" value="lib"/>
+  <property name="classes.dir" value="${build.dir}/classes"/>
+  <property name="jar.dir" value="${build.dir}/jar"/>
+  <property name="main-class" value="edu.unl.cse.activitygraph.DrawGraph"/>
+  <path id="classpath">
+    <fileset dir="${lib.dir}" includes="**/*.jar"/>
+  </path>
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+  </target>
+  <target name="init">
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${classes.dir}"/>
+    <mkdir dir="${jar.dir}"/>
+  </target>
+  <target name="compile" depends="init">
+    <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath"/>
+  </target>
+  <target name="jar" depends="compile">
+    <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+      <manifest>
+        <attribute name="Main-Class" value="${main-class}"/>
+        <!-- The classpath probably shouldn't be hardcoded like this, but I don't 
+             know the proper way to do this - Lorin -->
+		<attribute name="Class-Path" value="lib/opencsv-1.7.jar lib/piccolo.jar lib/piccolox.jar" />
+      </manifest>
+    </jar>
+  </target>
+  <target name="run" depends="jar">
+    <java fork="true" classname="${main-class}">
+      <classpath>
+        <path refid="classpath"/>
+        <path location="${jar.dir}/${ant.project.name}.jar"/>
+      </classpath>
+    </java>
+  </target>
+  <target name="clean-build" depends="clean,jar"/>
+  <target name="main" depends="clean,run"/>
+</project>

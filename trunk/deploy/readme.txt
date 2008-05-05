@@ -1,0 +1,1 @@
+This folder contains scripts for generating a zipfile which contains ActivityGraph.
