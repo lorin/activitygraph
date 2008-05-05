@@ -1,50 +1,39 @@
-package edu.unl.cse.activitygraph.nodes;
-
-import java.awt.Color;
+package edu.unl.cse.activitygraph;
 import java.awt.geom.Ellipse2D;
-import java.util.Date;
 
-import edu.umd.cs.piccolo.PNode;
+
 import edu.umd.cs.piccolo.nodes.PPath;
 import edu.umd.cs.piccolo.util.PAffineTransform;
 import edu.umd.cs.piccolo.util.PPaintContext;
-import edu.unl.cse.activitygraph.Point;
 
 /**
- * A node that represents a data point that exists at a single instant in time.
+ * A node that represents a data point.
  * 
- * It stays the same regardless of zoom setting.
- *
+ * It stays the same size regardless of zoom setting.
+ * 
+ * @author Lorin Hochstien
  *
  */
 
-public class PointNode extends PPath {
-
-	private static final long serialVersionUID = 2012648675640235991L;
+@SuppressWarnings("serial")
+public class DataPoint extends PPath {
 	
 	private float x,y;
-
-	private Point point;
 	
-	public PointNode(Point point, Ellipse2D ellipse, float x, float y, Color color) {
+	public static DataPoint createDataPoint(float x, float y, float width, float height) {
+		Ellipse2D ellipse = new Ellipse2D.Float();
+		ellipse.setFrame(x, y, width, height);
+		return new DataPoint(ellipse,x,y);
+		
+	}
+	
+	private DataPoint(Ellipse2D ellipse,float x, float y) {
 		super(ellipse);
-		this.point = point;
 		this.x = x;
 		this.y = y;
-		this.setPaint(color);
-		this.setStroke(null);
+		
 	}
 
-	public static PNode createPointNode(Point point, float x, float y, float radius, Color color) {
-		Ellipse2D ellipse = new Ellipse2D.Float();
-		ellipse.setFrame(x,y,radius,radius);
-		return new PointNode(point, ellipse,x,y,color);
-	}
-	
-	public Date getStartTime() {
-		return this.point.getStartTime();
-	}
-	
 	@Override
 	protected void paint(PPaintContext paintContext) {
 		
@@ -73,7 +62,5 @@ public class PointNode extends PPath {
 		// Undo the transformation
 		paintContext.popTransform(tf);
 	}
-
-	
 
 }

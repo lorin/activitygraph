@@ -1,4 +1,5 @@
-package edu.unl.cse.activitygraph.handlers;
+package edu.unl.cse.activitygraph;
+
 import edu.umd.cs.piccolo.event.PInputEvent;
 import edu.umd.cs.piccolo.event.PZoomEventHandler;
 import edu.umd.cs.piccolo.util.PAffineTransform;
@@ -8,9 +9,6 @@ import edu.umd.cs.piccolo.PCamera;
 import java.awt.geom.Point2D;
 
 
-/**
- * A zoomer that only zooms in the x-direction.
- */
 public class HorizontalZoomEventHandler extends PZoomEventHandler {
 	
 	// This is the same as viewZoomPoint in the parent, but it's private so we need
@@ -20,6 +18,7 @@ public class HorizontalZoomEventHandler extends PZoomEventHandler {
 	
 	@Override
 	protected void dragActivityFirstStep(PInputEvent aEvent) {
+		// TODO Auto-generated method stub
 		myViewZoomPoint = aEvent.getPosition();
 		super.dragActivityFirstStep(aEvent);
 	}

@@ -63,9 +63,6 @@ public class TickMark extends PPath {
 			return createDayTick(x,y);
 		case HOUR:
 			return createHourTick(x,y);
-		default:
-			return null;
-		/*
 		case HALFHOUR:
 			return createHalfHourTick(x,y);
 		case QUARTERHOUR:
@@ -75,8 +72,7 @@ public class TickMark extends PPath {
 		case MINUTE:
 			return createMinuteTick(x,y);
 		default: // Should never reach here
-			return null;
-		*/				
+			return null;				
 		}
 
 	}
@@ -110,8 +106,6 @@ public class TickMark extends PPath {
 
 	public static TickMark createLine(float x, float y, float height, float zoomThreshold) {
 		TickMark result = new TickMark(x,y,height,zoomThreshold);
-		//GeneralPath result = new GeneralPath();
-	    
 		result.moveTo(x, y);
 		result.lineTo(x, y-height);
 		result.setPaint(Color.white);

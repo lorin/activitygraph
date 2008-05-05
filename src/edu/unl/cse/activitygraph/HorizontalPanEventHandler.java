@@ -1,4 +1,5 @@
-package edu.unl.cse.activitygraph.handlers;
+package edu.unl.cse.activitygraph;
+
 import java.awt.geom.Point2D;
 
 import edu.umd.cs.piccolo.PCamera;
@@ -9,6 +10,8 @@ import edu.umd.cs.piccolo.util.PDimension;
 
 /**
  * A panner that only moves in the X direction
+ * @author Lorin Hochstein
+ *
  */
 public class HorizontalPanEventHandler extends PPanEventHandler {
 	protected void pan(PInputEvent e) {

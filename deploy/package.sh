@@ -17,10 +17,10 @@ rm -rf activitygraph/
 svnroot=`svn info | grep "Repository Root" | sed -e 's/Repository Root: //;'`
 svn export $svnroot/trunk activitygraph
 cd activitygraph
-
-# We don't distribute with the deploy directory (just used for packaging)
-# or the misc directory 
-rm -r deploy/ misc/
+# use the template file as the default properties file
+mv ActivityGraph.properties.tmpl ActivityGraph.properties
+# We don't distribute with the deploy directory
+rm -r deploy/
 
 # Build the jar and copy it to the root, and then remove the classes files
 ant jar

@@ -1,89 +1,35 @@
 <?xml version="1.0"?>
 <project name="ActivityGraph" default="compile" basedir=".">
+  <property name="src.dir" value="src/edu/unl/cse/activitygraph"/>
   <property name="build.dir" value="build"/>
-  <property name="build.prod.dir" value="${build.dir}/prod"/>
-  <property name="build.test.dir" value="${build.dir}/test"/>
-  <property name="doc.dir" value="doc"/>
-  <property name="index.dir" value="index"/>
+  <property name="lib.dir" value="lib"/>
+  <property name="classes.dir" value="${build.dir}/classes"/>
   <property name="jar.dir" value="${build.dir}/jar"/>
-  <property name="main-class" value="edu.unl.cse.activitygraph.GuiMain"/>
-  <property name="src.dir" value="src"/>
-  <property name="test.dir" value="test"/>
-  <property name="test.xml.dir"  location="${build.dir}/test-results"/>
-  <property name="vendor.lib.dir" value="lib"/>
-
-
-  <path id="project.classpath">
-	<pathelement location="${build.prod.dir}" />
-	<pathelement location="${build.test.dir}" />
-	<fileset dir="${vendor.lib.dir}">
-		<include name="*.jar"/>
-	</fileset>
-  </path>
-
-	
-  <!-- Below is the older classpath -->
+  <property name="main-class" value="edu.unl.cse.activitygraph.DrawGraph"/>
   <path id="classpath">
-    <fileset dir="${vendor.lib.dir}" includes="**/*.jar"/>
+    <fileset dir="${lib.dir}" includes="**/*.jar"/>
   </path>
   <target name="clean">
     <delete dir="${build.dir}"/>
   </target>
   <target name="init">
     <mkdir dir="${build.dir}"/>
-    <mkdir dir="${build.prod.dir}"/>
-  	<mkdir dir="${build.test.dir}" />
+    <mkdir dir="${classes.dir}"/>
     <mkdir dir="${jar.dir}"/>
   </target>
-
   <target name="compile" depends="init">
-    <javac srcdir="${src.dir}" destdir="${build.prod.dir}">
-		<classpath refid="project.classpath" />
-	</javac>
+    <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath"/>
   </target>
-
-  <target name="compile-tests" depends="compile">
-	<javac srcdir="${test.dir}" destdir="${build.test.dir}">
-		<classpath refid="project.classpath" />
-	</javac>
-  </target>
-
-  <target name="test" depends="compile-tests">
-    <delete dir="${test.xml.dir}"/>
-    <mkdir dir="${test.xml.dir}"/>
-    <junit errorProperty="test.failed" failureProperty="test.failed">
-      <classpath refid="project.classpath"/>
-      <formatter type="brief" usefile="false" />
-      <formatter type="xml" />
-      <batchtest todir="${test.xml.dir}">
-        <fileset dir="${build.test.dir}"
-          includes="**/*.class" />
-      </batchtest>
-      <sysproperty key="doc.dir" value="${doc.dir}" />
-		  <sysproperty key="index.dir" value="${index.dir}" />
-    </junit>
-    <fail message="Tests failed! Check test reports." if="test.failed"/>
-  </target>
-
-  
   <target name="jar" depends="compile">
-    <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${build.prod.dir}">
+    <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
       <manifest>
         <attribute name="Main-Class" value="${main-class}"/>
         <!-- The classpath probably shouldn't be hardcoded like this, but I don't 
              know the proper way to do this - Lorin -->
-		<attribute name="Class-Path" value="lib/piccolo.jar lib/piccolox.jar lib/xom-1.1.jar lib/svnkit.jar lib/ganymed.jar lib/postgresql-8.2-506.jdbc3.jar lib/swing-layout-1.0.2.jar lib/swing-worker-1.1.jar" />
+		<attribute name="Class-Path" value="lib/opencsv-1.7.jar lib/piccolo.jar lib/piccolox.jar" />
       </manifest>
     </jar>
   </target>
-  
-  <target name="run" depends="compile">
-    <java fork="true" classname="${main-class}">
-      <classpath refid="project.classpath" />
-    </java>
-  </target>
-  
-  <!--
   <target name="run" depends="jar">
     <java fork="true" classname="${main-class}">
       <classpath>
@@ -92,28 +38,6 @@
       </classpath>
     </java>
   </target>
--->
-
   <target name="clean-build" depends="clean,jar"/>
   <target name="main" depends="clean,run"/>
-
-  <target 
-	name="doc" 
-	description="Generate javadocs">
-	  <javadoc 
-		  defaultexcludes = "yes"
-		  destdir      = "./doc"
-		  use          = "true"
-		  sourcepath   = "${src.dir}"
-		  classpath    = "${vendor.lib.dir}/piccolo.jar;${vendor.lib.dir}/piccolox.jar;${vendor.lib.dir}/xom-1.1.jar;${vendor.lib.dir}/svnkit.jar;${vendor.lib.dir}/ganymed.jar;${vendor.lib.dir}/swing-worker-1.1.jar;${vendor.lib.dir}/swing-layout-1.0.2.jar"
-		  packagenames = "edu.unl.cse.activitygraph.*">
-		<link href="http://java.sun.com/j2se/1.5.0/docs/api/"/>
-		<link href="http://www.cs.umd.edu/hcil/jazz/learn/piccolo/doc-1.2/api/"/>
-		<link href="http://www.cafeconleche.org/XOM/apidocs/" />
-		<link href="http://svnkit.com/kb/javadoc/" />
-		<link href="https://swingworker.dev.java.net/nonav/javadoc/" />
-		
-		
-	 </javadoc>
-  </target>
 </project>
