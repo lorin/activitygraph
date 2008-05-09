@@ -1030,7 +1030,7 @@ private void setTooltips()
 	public static void main(String args[])  {
 
 		// XML
-		String fname = "data/data.xml";
+		String fname = "data/demo.xml";
 		try {
 			new ActivityGraph(new XMLDataSource(fname));
 		} catch(nu.xom.ParsingException e) {
