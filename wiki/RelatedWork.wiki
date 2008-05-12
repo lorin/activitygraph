@@ -6,6 +6,8 @@
 
  *  P. M. Johnson and H. Kou, [http://csdl.ics.hawaii.edu/techreports/06-02/06-02.pdf Automated Recognition of Test-Driven Development with Zorro], in International Workshop on Software Process Shanghai, China: University of Hawai'i, 2006.
  * F. E. Ritter and J. H. Larkin, "Developing Process Models as Summaries of HCI Action Sequences," Human-Computer Interaction, vol. 9, pp. 345-383, 1994.
+ * A.L. Wolf and D.S. Rosenblum, [http://dx.doi.org/10.1109/SPCON.1993.236817 A Study in Software Process Data Capture and Analysis], Continuous Software Process Improvement, Second International Conference on the Software Process, 1993. 
+
 
 
 
