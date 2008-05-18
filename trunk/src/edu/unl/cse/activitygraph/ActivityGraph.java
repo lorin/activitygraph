@@ -616,30 +616,42 @@ private void setTooltips()
 		PNode seriesNode = new PNode();
 		seriesGroupNode.addChild(seriesNode);
 		for(ITimedEvent event : series.getEvents()) {
-			PNode eventNode;
-			String time=event.toString();
-			String note=event.getNote();
-			String hint = "";
-			if(note!=null) {
-				hint +=note + "\n";
-			}			
-			hint +=time;
-			
-			if(event.isInterval()) {
-				eventNode = createIntervalNode((Interval)event, y, color);		
-				this.intervalNodes.add((IntervalNode) eventNode);
-				eventNode.addAttribute("tooltip",hint);
-				
-				
-			} else {
-				eventNode = createPointNode((Point)event, y, color);
-				this.pointNodes.add((PointNode) eventNode);
-				eventNode.addAttribute("tooltip",hint);
-			}
-			seriesNode.addChild(eventNode);
-			shiftCalculator.addEvent(event);
+			drawEvent(event, seriesNode, y, color);
 		}
 		
+	}
+
+	/**
+	 * Draw a timed event onto the canvas
+	 * @param event the event to be drawn
+	 * @param seriesNode the series associated with the event
+	 * @param y the y-value of the event
+	 * @param color the color to use for the event
+	 */
+	private void drawEvent(ITimedEvent event, PNode seriesNode, float y,
+			Color color) {
+		PNode eventNode;
+		String time=event.toString();
+		String note=event.getNote();
+		String hint = "";
+		if(note!=null) {
+			hint +=note + "\n";
+		}			
+		hint +=time;
+		
+		if(event.isInterval()) {
+			eventNode = createIntervalNode((Interval)event, y, color);		
+			this.intervalNodes.add((IntervalNode) eventNode);
+			eventNode.addAttribute("tooltip",hint);
+			
+			
+		} else {
+			eventNode = createPointNode((Point)event, y, color);
+			this.pointNodes.add((PointNode) eventNode);
+			eventNode.addAttribute("tooltip",hint);
+		}
+		seriesNode.addChild(eventNode);
+		shiftCalculator.addEvent(event);
 	}
 	
 
