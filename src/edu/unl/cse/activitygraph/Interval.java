@@ -3,13 +3,11 @@ package edu.unl.cse.activitygraph;
 import java.util.Calendar;
 import java.util.Date;
 
-import edu.unl.cse.activitygraph.interfaces.ITimedEvent;
-
 /**
  * A time interval.
  *
  */
-public class Interval implements ITimedEvent {
+public class Interval extends AbstractTimedEvent {
 	private Date startTime;
 	private Date endTime;
 	private String note;
