@@ -3,12 +3,10 @@ package edu.unl.cse.activitygraph;
 import java.util.Calendar;
 import java.util.Date;
 
-import edu.unl.cse.activitygraph.interfaces.ITimedEvent;
-
 /**
  * A Point is a single instant in time.
  */
-public class Point implements ITimedEvent {
+public class Point extends AbstractTimedEvent {
 	private Date time;
 	private String note;
 
