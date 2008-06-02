@@ -8,8 +8,8 @@ An !ActivityGraph XML file looks something like this:
 <ActivityGraph>
  <SeriesGroup name="Truth">
 	<Series name="thinking">
-		<Interval start="1176500214" end="1176004215" note="A note on this element" />
-		<Interval start="1186550957" end="1186552054" note="Another note" />
+		<Interval start="1176500214" end="1176004215" text="a description of the element" note="A note on this element" />
+		<Interval start="1186550957" end="1186552054" text="another description" note="Another note" />
 		...
 	</Series>
 	<Series name="serial code">
@@ -30,6 +30,6 @@ An !ActivityGraph XML file looks something like this:
 
 }}}
 
-A ''Series'' of data elements is made up of either ''Points'' (that occur in a single instant in time) or ''Intervals'' (that have a start and end time). ''Series'' are organized into ''!SeriesGroups''. An optional "note" attribute can be added to any ''Point'' or ''Interval'' element, which will appear as a tooltip.
+A ''Series'' of data elements is made up of either ''Points'' (that occur in a single instant in time) or ''Intervals'' (that have a start and end time). ''Series'' are organized into ''!SeriesGroups''. An optional "text" and "note" attribute can be added to any ''Point'' or ''Interval'' element, which will appear as a tooltip. "text" is intended for objective information about the element, and "note" is intended for more subjective annotations.
 
 Times are specified as seconds since the epoch (Jan. 1, 1970 00:00:00 UTC), also known as [http://en.wikipedia.org/wiki/Unix_time Unix time]. (Note that the Java standard library uses milliseconds since the start of the Unix epoch instead of seconds).
