@@ -36,4 +36,6 @@ Times are specified as seconds since the epoch (Jan. 1, 1970 00:00:00 UTC), also
 
 A Series may have an optional color attribute, using one of the following colors: black, blue, cyan, darkGray, gray, green, lightGray, magenta, orange, pink, red, white, yellow
 
-The timezone attribute in the ActivityGraph element is optional. It's useful when the data that you are visualizing was recorded in a different [http://www.statoids.com/tus.html time zone] than the one your computer is set to. 
+The timezone attribute in the !ActivityGraph element is optional. It's useful when the data that you are visualizing was recorded in a different [http://www.statoids.com/tus.html time zone] than the one your computer is set to. 
+
+There is also an [http://activitygraph.googlecode.com/svn/trunk/data/activitygraph.dtd ActivityGraph DTD].
