@@ -46,6 +46,8 @@ public class CommandLineMain {
 			} catch(nu.xom.ParsingException e) {
 				System.err.println("Problem parsing the XML file: " + fname + "\n");
 				e.printStackTrace(System.err);
+			} catch(XMLDataSource.InvalidColorException e) {
+				System.out.println("Color specified in XML file is not valid: " + e.badColor);
 			} catch(FileNotFoundException e) {
 				System.err.println("File not found: " + fname + "\n");
 			} catch(IOException e) {

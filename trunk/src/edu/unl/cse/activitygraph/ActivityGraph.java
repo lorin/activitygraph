@@ -1064,6 +1064,8 @@ private void setTooltips()
 		} catch(nu.xom.ParsingException e) {
 			System.out.println("Problem parsing the XML file: " + fname + "\n");
 			e.printStackTrace();
+		} catch(XMLDataSource.InvalidColorException e) {
+			System.out.println("Color specified in XML file is not valid: " + e.badColor);
 		} catch(IOException e) {
 			System.out.println("Problem reading the XML file: " + fname + "\n");
 			e.printStackTrace();

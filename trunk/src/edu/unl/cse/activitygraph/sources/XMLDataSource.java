@@ -1,5 +1,6 @@
 package edu.unl.cse.activitygraph.sources;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -24,22 +25,22 @@ public class XMLDataSource extends GenericDataSource {
 	
 	private boolean isEmpty = true;
 
-	public XMLDataSource(String xmlFileName) throws IOException,ParsingException,ValidityException {
+	public XMLDataSource(String xmlFileName) throws IOException,ParsingException,ValidityException, InvalidColorException {
 		this(new FileReader(xmlFileName));
 	}
 	
-	public XMLDataSource(File file) throws FileNotFoundException, IOException, ParsingException,ValidityException{
+	public XMLDataSource(File file) throws FileNotFoundException, IOException, ParsingException,ValidityException, InvalidColorException{
 		this(new FileReader(file));
 	}
 	
-	public XMLDataSource(Reader reader) throws IOException,ParsingException,ValidityException {
+	public XMLDataSource(Reader reader) throws IOException,ParsingException,ValidityException, InvalidColorException {
 		Builder parser = new Builder();
 		Document doc = parser.build(reader);
 		this.seriesGroups = new ArrayList<SeriesGroup>();
 		this.parseXml(doc);
 	}
 
-	private void parseXml(Document doc) throws ValidityException{
+	private void parseXml(Document doc) throws ValidityException, InvalidColorException{
 		
 		Element root = doc.getRootElement();
 		if(root.getLocalName() != "ActivityGraph") {
@@ -68,7 +69,7 @@ public class XMLDataSource extends GenericDataSource {
 		
 	}
 
-	private void processSeriesGroupElement(Element groupNode) throws ValidityException{
+	private void processSeriesGroupElement(Element groupNode) throws ValidityException, InvalidColorException{
 		
 		SeriesGroup seriesGroup = new SeriesGroup(groupNode.getAttributeValue("name"));
 		// Skip empty series groups
@@ -90,8 +91,13 @@ public class XMLDataSource extends GenericDataSource {
 		}
 	}
 
-	private void processSeriesElement(Element seriesNode, SeriesGroup seriesGroup) throws ValidityException {
+	private void processSeriesElement(Element seriesNode, SeriesGroup seriesGroup) throws ValidityException, InvalidColorException {
 		Series series = seriesGroup.addSeries(seriesNode.getAttributeValue("name"));
+		String colorName = seriesNode.getAttributeValue("color");
+		if(colorName!=null) {
+			Color color = stringToColor(colorName);
+			series.setColor(color);
+		}
 		
 		Node child;
 		Element elt;
@@ -173,6 +179,60 @@ public class XMLDataSource extends GenericDataSource {
 	
 	private void setNotEmpty() {
 		this.isEmpty = false;
+	}
+	
+	/**
+	 * Converts a string that describes a color to the corresponding color.
+	 * 
+	 * Valid colors: black,blue,cyan,darkGray,gray,green,lightGray, magenta,orange,
+	 * pink,red,white,yellow
+	 * 
+	 * @param s the color as a string
+	 * @return
+	 */
+	public static Color stringToColor(String s) throws InvalidColorException {
+		String sCol = s.toLowerCase();
+		if(sCol.equals("black"))
+			return Color.black;
+		else if(sCol.equals("blue"))
+			return Color.blue;
+		else if(sCol.equals("cyan"))
+			return Color.cyan;
+		else if(sCol.equals("darkgray"))
+			return Color.darkGray;
+		else if(sCol.equals("dark_gray"))
+			return Color.darkGray;
+		else if(sCol.equals("gray"))
+			return Color.gray;
+		else if(sCol.equals("green"))
+			return Color.green;
+		else if(sCol.equals("lightgray"))
+			return Color.lightGray;
+		else if(sCol.equals("light_gray"))
+			return Color.lightGray;
+		else if(sCol.equals("magenta"))
+			return Color.magenta;
+		else if(sCol.equals("orange"))
+			return Color.orange;
+		else if(sCol.equals("pink"))
+			return Color.pink;
+		else if(sCol.equals("red"))
+			return Color.red;
+		else if(sCol.equals("white"))
+			return Color.white;
+		else if(sCol.equals("yellow"))
+			return Color.yellow;
+		else throw new InvalidColorException(sCol);
+		
+	}
+	
+	@SuppressWarnings("serial")
+	static public class InvalidColorException extends Exception {
+		public String badColor;
+		
+		public InvalidColorException(String s) {
+			this.badColor = s;
+		}
 	}
 
 

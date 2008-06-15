@@ -2,6 +2,7 @@ package edu.unl.cse.activitygraph;
 
 import static org.junit.Assert.*;
 
+import java.awt.Color;
 import java.io.IOException;
 import java.io.StringReader;
 import java.text.SimpleDateFormat;
@@ -46,6 +47,31 @@ public class XMLDataSourceTest {
 		
 	}
 	
+	@Test(expected=InvalidColorException.class)
+	public void testInvalidColorException() throws InvalidColorException {
+		XMLDataSource.stringToColor("invalid color");
+	}
+	
+	@Test
+	public void testColors() throws InvalidColorException {
+		assertEquals(Color.black,XMLDataSource.stringToColor("BLACK"));
+		assertEquals(Color.black,XMLDataSource.stringToColor("Black"));
+		assertEquals(Color.black,XMLDataSource.stringToColor("black"));
+		assertEquals(Color.blue,XMLDataSource.stringToColor("blue"));
+		assertEquals(Color.cyan,XMLDataSource.stringToColor("cyan"));
+		assertEquals(Color.darkGray,XMLDataSource.stringToColor("darkGray"));
+		assertEquals(Color.darkGray,XMLDataSource.stringToColor("dark_Gray"));
+		assertEquals(Color.gray,XMLDataSource.stringToColor("gray"));
+		assertEquals(Color.green,XMLDataSource.stringToColor("green"));
+		assertEquals(Color.lightGray,XMLDataSource.stringToColor("lightgray"));
+		assertEquals(Color.lightGray,XMLDataSource.stringToColor("light_gray"));
+		assertEquals(Color.magenta,XMLDataSource.stringToColor("magenta"));
+		assertEquals(Color.orange,XMLDataSource.stringToColor("orange"));
+		assertEquals(Color.pink,XMLDataSource.stringToColor("pink"));
+		assertEquals(Color.red,XMLDataSource.stringToColor("red"));
+		assertEquals(Color.white,XMLDataSource.stringToColor("white"));
+		assertEquals(Color.yellow,XMLDataSource.stringToColor("yellow"));
+	}
 		
 	@Test
 	public void testSingleSeriesGroup() throws IOException,ParsingException,ValidityException, InvalidColorException{
