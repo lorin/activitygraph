@@ -17,7 +17,7 @@ Software-engineering in-process capture and analysis tools
 
  * [http://www.hackystat.org Hackystat] 
  * [http://6thsenseanalytics.com 6thSenseAnalytics]
- * [http://developer.berlios.de/projects/ec/ ElectroCodeoGram] ([http://openfacts.berlios.de/index-en.phtml?title=ElectroCodeoGram wiki])
+ * [http://developer.berlios.de/projects/ecg/ ElectroCodeoGram] ([http://openfacts.berlios.de/index-en.phtml?title=ElectroCodeoGram wiki])
  * [http://www.prom.case.unibz.it/ PRO Metrics]
  * [http://empirical.jp/~epm/ Empirical Project Monitor]
  * [http://serl.cs.colorado.edu/serl/process/Balboa Balboa]
