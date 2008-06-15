@@ -38,3 +38,4 @@ Some tools that visualize time-series data:
 Tools for doing exploratory sequential data analysis (ESDA):
  * [http://ritter.ist.psu.edu/dismal/dismal.html Dismal]
  * [http://acs.ist.psu.edu/dismal/MacShapa.html MacShapa]
+ * [http://www.openshapa.org/ OpenShapa] (in development)
