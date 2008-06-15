@@ -7,6 +7,7 @@ import java.io.StringReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import nu.xom.ParsingException;
 import nu.xom.ValidityException;
@@ -16,6 +17,7 @@ import org.junit.Test;
 
 import edu.unl.cse.activitygraph.interfaces.ITimedEvent;
 import edu.unl.cse.activitygraph.sources.XMLDataSource;
+import edu.unl.cse.activitygraph.sources.XMLDataSource.InvalidColorException;
 
 
 public class XMLDataSourceTest {
@@ -34,17 +36,19 @@ public class XMLDataSourceTest {
 
 	/**
 	 * Should throw an exception because root node is not ActivityGraph
+	 * @throws InvalidColorException 
 	 *
 	 */
 	@Test(expected=ValidityException.class)
-	public void testValidityException() throws IOException,ParsingException,ValidityException{
+	public void testValidityException() throws IOException,ParsingException,ValidityException, InvalidColorException{
 		String xml = "<SeriesGroup name='foo' />";
 		xmlds = new XMLDataSource(new StringReader(xml));
 		
 	}
 	
+		
 	@Test
-	public void testSingleSeriesGroup() throws IOException,ParsingException,ValidityException{
+	public void testSingleSeriesGroup() throws IOException,ParsingException,ValidityException, InvalidColorException{
 		String xml = "<ActivityGraph>" +
 				"<SeriesGroup name='foo'>" +
 				"<Series name='bar' />" +
@@ -60,9 +64,10 @@ public class XMLDataSourceTest {
 
 	/**
 	 * Ignore empty series groups
+	 * @throws InvalidColorException 
 	 */
 	@Test
-	public void testEmptySeriesGroup() throws IOException,ParsingException,ValidityException{
+	public void testEmptySeriesGroup() throws IOException,ParsingException,ValidityException, InvalidColorException{
 		String xml = "<ActivityGraph>" +
 				"<SeriesGroup name='foo' />" +
 				"</ActivityGraph>";
@@ -73,7 +78,7 @@ public class XMLDataSourceTest {
 
 	
 	@Test
-	public void testSingleSeries() throws IOException,ParsingException,ValidityException{
+	public void testSingleSeries() throws IOException,ParsingException,ValidityException, InvalidColorException{
 		String xml = "<ActivityGraph>\n" + 
 				"		<SeriesGroup name=\'foo\'>\n" + 
 				"			<Series name=\'bar\' />\n" + 
@@ -89,13 +94,16 @@ public class XMLDataSourceTest {
 		assertEquals("bar",series.getName());
 	}
 	
+	
+	
 	@Test
-	public void testSingleIntervalSeries() throws IOException,ParsingException,ValidityException{
+	public void testSingleIntervalSeries() throws IOException,ParsingException,ValidityException, InvalidColorException{
 		/*
 		  start: 2007-09-01 15:53:00 CDT
 		  end:   2007-09-01 18:40:00 CDT
 		 */
-		String xml = "<ActivityGraph>" +
+		String tz = "America/Chicago";
+		String xml = "<ActivityGraph timezone='" + tz + "'>" +
 				"<SeriesGroup name='main'>" +
 				"<Series name='thinking'>" + 
 				"<Interval start='1188679980' end='1188690000' />" +
@@ -107,15 +115,16 @@ public class XMLDataSourceTest {
 		List<ITimedEvent> events = series.getEvents();
 		assertEquals(1,events.size());
 		ITimedEvent event = events.get(0);
-
+		formatter.setTimeZone(TimeZone.getTimeZone(tz));
 		assertEquals("2007-09-01 15:53", formatter.format(event.getStartTime()));
 		assertEquals("2007-09-01 18:40", formatter.format(event.getEndTime()));
 
 	}
 	
 	@Test
-	public void testSinglePointSeries() throws IOException,ParsingException,ValidityException{
-		String xml = "<ActivityGraph>" +
+	public void testSinglePointSeries() throws IOException,ParsingException,ValidityException, InvalidColorException{
+		String tz = "America/Chicago";
+		String xml = "<ActivityGraph timezone='" + tz + "'>" +
 		"<SeriesGroup name='events'>" +
 		"<Series name='compile'>" + 
 		"<Point time='1188679980' />" +
@@ -128,6 +137,7 @@ public class XMLDataSourceTest {
 		List<ITimedEvent> events = series.getEvents();
 		assertEquals(1,events.size());
 		ITimedEvent event = events.get(0);
+		formatter.setTimeZone(TimeZone.getTimeZone(tz));
 		assertEquals("2007-09-01 15:53", formatter.format(event.getStartTime()));
 		assertEquals("2007-09-01 15:53", formatter.format(event.getEndTime()));
 		
@@ -137,19 +147,21 @@ public class XMLDataSourceTest {
 	public void testEpochStringToDate() {
 		// 2007-09-01 18:40:00 CDT
 		String s = "1188690000";
+		String tz = "America/Chicago";
 		Date date = XMLDataSource.epochStringToDate(s);
-
+		formatter.setTimeZone(TimeZone.getTimeZone(tz));
 		assertEquals("2007-09-01 18:40",formatter.format(date));
 		
 	}
 	
 	@Test
-	public void testGetFirstEventTime() throws IOException,ParsingException,ValidityException {
+	public void testGetFirstEventTime() throws IOException,ParsingException,ValidityException, InvalidColorException {
 		/*
 		  start: 2007-09-01 15:53:00 CDT
 		  end:   2007-09-01 18:40:00 CDT
 		 */
-		String xml = "<ActivityGraph>" +
+		String tz = "America/Chicago";
+		String xml = "<ActivityGraph timezone='" + tz + "'>" +
 		"<SeriesGroup name='main'>" +
 		"<Series name='thinking'>" + 
 		"<Interval start='1188679980' end='1188690000' />" +
@@ -157,16 +169,18 @@ public class XMLDataSourceTest {
 		"</SeriesGroup>" +
 		"</ActivityGraph>";
 		xmlds = new XMLDataSource(new StringReader(xml));
+		formatter.setTimeZone(TimeZone.getTimeZone(tz));
 		assertEquals("2007-09-01 15:53", formatter.format(xmlds.getFirstEventTime()));
 	}
 	
 	@Test
-	public void testGetLastEventTime() throws IOException,ParsingException,ValidityException {
+	public void testGetLastEventTime() throws IOException,ParsingException,ValidityException, InvalidColorException {
 		/*
 		  start: 2007-09-01 15:53:00 CDT
 		  end:   2007-09-01 18:40:00 CDT
 		 */
-		String xml = "<ActivityGraph>" +
+		String tz = "America/Chicago";
+		String xml = "<ActivityGraph timezone='" + tz + "'>" +
 		"<SeriesGroup name='main'>" +
 		"<Series name='thinking'>" + 
 		"<Interval start='1188679980' end='1188690000' />" +
@@ -174,11 +188,12 @@ public class XMLDataSourceTest {
 		"</SeriesGroup>" +
 		"</ActivityGraph>";
 		xmlds = new XMLDataSource(new StringReader(xml));
+		formatter.setTimeZone(TimeZone.getTimeZone(tz));
 		assertEquals("2007-09-01 18:40", formatter.format(xmlds.getLastEventTime()));
 	}
 	
 	@Test
-	public void testIsEmpty() throws IOException,ParsingException,ValidityException
+	public void testIsEmpty() throws IOException,ParsingException,ValidityException, InvalidColorException
 	{
 		String xml="<ActivityGraph />";
 		xmlds = new XMLDataSource(new StringReader(xml));
@@ -186,7 +201,7 @@ public class XMLDataSourceTest {
 	}
 	
 	@Test
-	public void testIsNonEmpty() throws IOException,ParsingException,ValidityException
+	public void testIsNonEmpty() throws IOException,ParsingException,ValidityException, InvalidColorException
 	{
 		String xml = "<ActivityGraph>" +
 		"<SeriesGroup name='main'>" +
