@@ -18,6 +18,7 @@ import edu.unl.cse.activitygraph.Interval;
 import edu.unl.cse.activitygraph.Point;
 import edu.unl.cse.activitygraph.Series;
 import edu.unl.cse.activitygraph.SeriesGroup;
+import edu.unl.cse.activitygraph.util.DataTimeZone;
 
 public class XMLDataSource extends GenericDataSource {
 	
@@ -42,7 +43,13 @@ public class XMLDataSource extends GenericDataSource {
 		
 		Element root = doc.getRootElement();
 		if(root.getLocalName() != "ActivityGraph") {
-			throw new ValidityException("Root node is type: " + root.getLocalName() + ", expected type: ActivityGraph");
+			throw new ValidityException("Root node is type: " + root.getLocalName() + ", expected type: ActivityGraph");									
+		}
+		
+		// Check if there's a time zone. If so, set it
+		String tzId = root.getAttributeValue("timezone");
+		if(tzId!=null) {
+			DataTimeZone.setByString(tzId);
 		}
 		
 		Node child;

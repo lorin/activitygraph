@@ -22,7 +22,7 @@ public class CoordMapper {
 		 * 
 		 * So, if the first event happens at 9:35, the reference time is 9:00
 		 */
-		refCal = Calendar.getInstance();
+		refCal = Calendar.getInstance(DataTimeZone.getTimeZone());
 		refCal.setTime(firstEventTime);
 		refCal.set(Calendar.MINUTE,0);
 		refCal.set(Calendar.SECOND,0);
@@ -53,7 +53,7 @@ public class CoordMapper {
 	 * @return the time corresponding to the x-value
 	 */
 	public Date xToTime(float x) {
-		Calendar cal = Calendar.getInstance();
+		Calendar cal = Calendar.getInstance(DataTimeZone.getTimeZone());
 		long ms = (long) (((double)x)*msInMinute + this.refTime.getTime());
 		cal.setTimeInMillis(ms);
 		return cal.getTime();

@@ -3,6 +3,8 @@ package edu.unl.cse.activitygraph;
 import java.util.Calendar;
 import java.util.Date;
 
+import edu.unl.cse.activitygraph.util.DataTimeZone;
+
 /**
  * A time interval.
  *
@@ -66,8 +68,8 @@ public class Interval extends AbstractTimedEvent {
 
 	@Override
 	public String toString() {
-		Calendar start = Calendar.getInstance();
-		Calendar end = Calendar.getInstance();
+		Calendar start = Calendar.getInstance(DataTimeZone.getTimeZone());
+		Calendar end = Calendar.getInstance(DataTimeZone.getTimeZone());
 		start.clear();
 		start.setTime(this.startTime);
 		//String date=String.format("%tD", start);
