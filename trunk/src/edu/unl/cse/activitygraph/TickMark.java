@@ -63,9 +63,9 @@ public class TickMark extends PPath {
 			return createDayTick(x,y);
 		case HOUR:
 			return createHourTick(x,y);
-		default:
-			return null;
-		/*
+		//default:
+		//	return null;
+		
 		case HALFHOUR:
 			return createHalfHourTick(x,y);
 		case QUARTERHOUR:
@@ -76,7 +76,7 @@ public class TickMark extends PPath {
 			return createMinuteTick(x,y);
 		default: // Should never reach here
 			return null;
-		*/				
+						
 		}
 
 	}

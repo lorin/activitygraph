@@ -3,6 +3,8 @@ package edu.unl.cse.activitygraph;
 import java.util.Calendar;
 import java.util.Date;
 
+import edu.unl.cse.activitygraph.util.DataTimeZone;
+
 /**
  * A Point is a single instant in time.
  */
@@ -50,7 +52,7 @@ public class Point extends AbstractTimedEvent {
 		return 42;
 	}
 	public String toString(){
-		Calendar start = Calendar.getInstance();
+		Calendar start = Calendar.getInstance(DataTimeZone.getTimeZone());
 		start.clear();
 		start.setTime(this.time);
 		//String date=String.format("%tD", start);
