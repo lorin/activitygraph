@@ -604,11 +604,9 @@ private void setTooltips()
 		PNode layer = getCanvas().getLayer();
 		SeriesGroupNode seriesGroupNode = new SeriesGroupNode();
 
-		Color color;
 		for(Series series : seriesGroup.getSeries()) {
 			String seriesName = series.getName();
-			color = this.cycler.getNextColor();		
-			drawSeries(series,seriesGroupNode,y,color);
+			drawSeries(series,seriesGroupNode,y);
 			this.yLabelTable.put(seriesName, y);
 			seriesGroupNode.addInputEventListener(new DoubleClickEventHandler(seriesGroupNode,series));
 			
@@ -619,9 +617,17 @@ private void setTooltips()
 		layer.addChild(seriesGroupNode);
 		return y;
 	}
-	
-	private void drawSeries(Series series, SeriesGroupNode seriesGroupNode, float y, Color color) {
-		series.setColor(color);
+
+
+	private void drawSeries(Series series, SeriesGroupNode seriesGroupNode, float y) {
+
+		// If the series doesn't come with a color already specified, it should be allocated
+		// a random color.
+		if(series.getColor()==null) {
+			series.setColor(this.cycler.getNextColor());
+		}
+
+		Color color = series.getColor();
 		series.setyLabelPos(y);
 		PNode seriesNode = new PNode();
 		seriesGroupNode.addChild(seriesNode);
