@@ -11,10 +11,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Hashtable;
+import java.util.TimeZone;
+
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JMenu;
@@ -59,6 +63,7 @@ import edu.unl.cse.activitygraph.sources.SVNDataSource;
 import edu.unl.cse.activitygraph.sources.XMLDataSource;
 import edu.unl.cse.activitygraph.util.ColorCycler;
 import edu.unl.cse.activitygraph.util.CoordMapper;
+import edu.unl.cse.activitygraph.util.DataTimeZone;
 import edu.unl.cse.activitygraph.SeriesGroup;
 import edu.unl.cse.activitygraph.Series;
 
@@ -230,8 +235,16 @@ public class ActivityGraph extends AGFrame {
 		PCanvas canvas = getCanvas();
 		PCamera cam = canvas.getCamera();
 		PBounds rect = cam.getViewBounds(); 
-		setStatus(coordMapper.xToTime((float)rect.getMinX()).toString() + "-" + 
-				  coordMapper.xToTime((float)rect.getMaxX()).toString());
+		DateFormat fmt = DateFormat.getDateTimeInstance();
+		TimeZone tz = DataTimeZone.getTimeZone();
+		fmt.setTimeZone(tz);
+		Date min = coordMapper.xToTime((float)rect.getMinX());
+		Date max = coordMapper.xToTime((float)rect.getMaxX());
+		setStatus(fmt.format(min) +
+				  " " + tz.getDisplayName(tz.inDaylightTime(min),TimeZone.SHORT) + 
+				" - " + fmt.format(max) + 
+				  " " + tz.getDisplayName(tz.inDaylightTime(max),TimeZone.SHORT));
+		
 	}
 
 
@@ -264,10 +277,10 @@ public class ActivityGraph extends AGFrame {
 		//draw xAxis  yAxis and unit mark on x Axis
 		float xmax = this.coordMapper.timeToX(this.dataSource.getLastEventTime());
 		float xmin = this.coordMapper.timeToX(this.dataSource.getFirstEventTime());
-		Calendar first = Calendar.getInstance();
+		Calendar first = Calendar.getInstance(DataTimeZone.getTimeZone());
 		first.clear();
 		first.setTime(this.dataSource.getFirstEventTime());
-		Calendar last = Calendar.getInstance();
+		Calendar last = Calendar.getInstance(DataTimeZone.getTimeZone());
 		last.clear();
 		last.setTime(this.dataSource.getLastEventTime());
 		drawAxes(xmin,xmax, ymax,first,last);
@@ -591,19 +604,16 @@ private void setTooltips()
 		PNode layer = getCanvas().getLayer();
 		SeriesGroupNode seriesGroupNode = new SeriesGroupNode();
 
-		Color color = this.cycler.getNextColor();
+		Color color;
 		for(Series series : seriesGroup.getSeries()) {
 			String seriesName = series.getName();
-			//java.util.Date start= series.getEvents().get(0).getStartTime();
-			//String hint = String.valueOf(Math.round(start));
-			
+			color = this.cycler.getNextColor();		
 			drawSeries(series,seriesGroupNode,y,color);
 			this.yLabelTable.put(seriesName, y);
 			seriesGroupNode.addInputEventListener(new DoubleClickEventHandler(seriesGroupNode,series));
 			
 			// Set the y-value
 			y += this.seriesDist;
-			color = this.cycler.getNextColor();
 			
 		}
 		layer.addChild(seriesGroupNode);
