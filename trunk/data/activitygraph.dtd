@@ -1,0 +1,16 @@
+<!ELEMENT ActivityGraph (SeriesGroup*)>
+ <!ATTLIST ActivityGraph timezone CDATA #IMPLIED>
+<!ELEMENT SeriesGroup (Series*)>
+ <!ATTLIST SeriesGroup name CDATA #REQUIRED>
+<!ELEMENT Series ((Interval|Point)*)>
+  <!ATTLIST Series name CDATA #REQUIRED>
+  <!ATTLIST Series color CDATA #IMPLIED>
+<!ELEMENT Interval EMPTY>
+  <!ATTLIST Interval start CDATA #REQUIRED>
+  <!ATTLIST Interval end CDATA #REQUIRED>
+  <!ATTLIST Interval text CDATA #IMPLIED>
+  <!ATTLIST Interval note CDATA #IMPLIED>
+<!ELEMENT Point EMPTY>
+ <!ATTLIST Point time CDATA #REQUIRED>
+ <!ATTLIST Point text CDATA #IMPLIED>
+ <!ATTLIST Point note CDATA #IMPLIED>
