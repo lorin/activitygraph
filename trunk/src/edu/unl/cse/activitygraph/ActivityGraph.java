@@ -583,7 +583,7 @@ private void setTooltips()
 			y = this.drawSeriesGroup(seriesGroup,y);	
 			y +=this.seriesGroupDist;
 			//draw legend
-			drawLegend(this.initialViewOffset.x,this.initialViewOffset.y,seriesGroup,yLegendDis);
+			drawLegend(this.initialViewOffset.x-100,this.initialViewOffset.y,seriesGroup,yLegendDis);
 			yLegendDis += 50;
 			//draw y axis label
 			drawYLabel(this.initialViewOffset.x,this.initialViewOffset.y,seriesGroup);
