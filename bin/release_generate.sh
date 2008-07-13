@@ -21,7 +21,7 @@ VERSION=$1
 fi
 
 NAME=ActivityGraph
-SVNROOT=http://cse.unl.edu:8080/svn/ActivityGraph
+SVNROOT=http://activitygraph.googlecode.com/svn
 RELEASE=$NAME-$VERSION
 WORK_DIR=$HOME/work
 TEST_DIR=$HOME/testinstall
