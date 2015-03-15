@@ -25,7 +25,8 @@ To run ActivityGraph, type:
 
     $ ant run
 
-Try opening the XML file data/demo.xml to try out the visualization (using the File menu).
+Try opening the XML file data/demo.xml to try out the visualization (using the
+File menu). See [format.md](format.md) for information on the file format.
 
 ## Packaging ActivityGraph
 
