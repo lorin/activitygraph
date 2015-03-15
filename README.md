@@ -1,6 +1,11 @@
 # ActivityGraph
 
-ActivityGraph is an application for visualizing developer workflow.
+ActivityGraph is an interactive application for visualizing developer workflow.
+
+![ActivityGraph](activitygraph.png).
+
+Pan by dragging with the left mouse button, zoom by dragging with the right
+mouse button.
 
 ## Building ActivityGraph
 
