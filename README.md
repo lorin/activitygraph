@@ -4,8 +4,14 @@ ActivityGraph is an interactive application for visualizing developer workflow.
 
 ![ActivityGraph](activitygraph.png).
 
-Pan by dragging with the left mouse button, zoom by dragging with the right
-mouse button.
+## Interacting with ActivityGraph
+
+Use the left mouse button (while moving the mouse) to pan.
+
+Use the right mouse button (while moving the mouse) to zoom.
+
+Double-click on a series in a group to collapse all of the series elements to the same y-value.
+
 
 ## Building ActivityGraph
 
@@ -28,7 +34,14 @@ To run ActivityGraph, type:
 Try opening the XML file data/demo.xml to try out the visualization (using the
 File menu). See [format.md](format.md) for information on the file format.
 
-## Packaging ActivityGraph
+
+## Data sources
+
+ActivityGraph supports an XML format, as well as several other sources that are
+pretty obsolete now (subversion repository, Trac repository).
+
+
+## Packaging ActivityGraph (obsolete)
 
 If you wish to create a package of ActivityGraph for deployment, first make sure
 you have a ~/work directory (where a pristine version of ActivityGraph will be
